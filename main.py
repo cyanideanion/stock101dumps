@@ -816,7 +816,7 @@ with tab3:
             data['Price'] = df_spy['Close']
             data.dropna(subset=['Label', 'Price'], inplace=True)
 
-            horizons = {'1-Month': 21, '3-Months': 63, '6-Months': 126, '12-Months': 252} # Trading day approximations
+            horizons = {'6-Month': 126, '12-Months': 252, '24-Months': 504, '36-Months': 756} # Trading day approximations
 
             for name, period in horizons.items():
                 data[f'{name}_Ret'] = (data['Price'].shift(-period) / data['Price'] - 1) * 100
