@@ -266,7 +266,7 @@ tab1, tab2, tab3, tab4 = st.tabs(["Market Trend", "Asset Allocation", "Research 
 # TAB 1: MARKET Trend
 # ==========================================
 with tab1:
-    # --- S&P 500 Trend ---
+    # --- Technical Momentum ---
 
     col1, col2 = st.columns([1, 3])
 
@@ -289,7 +289,7 @@ with tab1:
 
     # Title, Sentiment, and Description
     with col1:
-        st.subheader("S&P 500 Trend")
+        st.subheader("Technical Momentum")
         get_spy_sentiment(score_spy)
         #st.metric("Score", f"{score_spy:.0f}/100")
         st.write("Computed based on the percentile deviation of the current SPY price from its 125-day Moving Average. This moving average reflects the ongoing medium-term trading momentum of the S&P 500. Markets trading above their trend tend to reflect confidence and risk-taking behavior. Vice versa, persistent moves below this level often signal growing caution and weakening investor conviction.")
@@ -355,7 +355,7 @@ with tab1:
         st.plotly_chart(fig_spy, width='stretch', config={'displayModeBar': False, 'scrollZoom': False})
 
 
-    # --- Volatilit (VIX) Trend ---
+    # --- Volatilit Shocks ---
 
     col1, col2 = st.columns([1, 3])
 
@@ -377,7 +377,7 @@ with tab1:
 
     # Title, Sentiment, and Description
     with col1:
-        st.subheader("Volatility (VIX) Trend")
+        st.subheader("Volatilit Shocks")
         get_vix_sentiment(score_vix)
         #st.metric("Score", f"{score_vix:.0f}/100")
         st.write("Computed based on the percentile deviation of the current VIX from its 50-day Moving Average. The CBOE Volatility Index (VIX) measures the S&P 500’s expected volatility in the next 30 days based on the trading activities of its options. However, looking at the VIX directly dilutes actual sentiments with institutional hedging. Therefore, relativity to its short-term movement helps smooth these noises.")
@@ -444,10 +444,10 @@ with tab1:
 
 
 # ==========================================
-# TAB 2: ASSET ALLOCATION
+# TAB 2: Flight-To-Safety
 # ==========================================
 with tab2:
-    # --- Safe Haven Demand ---
+    # --- Cross-Asset ---
 
     col1, col2 = st.columns([1, 3])
 
@@ -470,7 +470,7 @@ with tab2:
 
     # Title, Sentiment, and Description
     with col1:
-        st.subheader("Safe Haven Demand")
+        st.subheader("Cross-Asset")
         get_sh_sentiment(score_sh)
         #st.metric("Score", f"{score_sh:.0f}/100")
         st.write("Stocks and bonds historically have an inverse relationship due to risk-related factors that are directly tied to trading sentiments. A preference for stocks typically signals optimism about economic growth and earnings. A shift toward bonds often indicates rising uncertainty or risk aversion. Because capital flows often move ahead of price trends, this spread can reveal sentiment shifts early.")
@@ -550,7 +550,7 @@ with tab2:
         st.plotly_chart(fig_sh, width='stretch', config={'displayModeBar': False, 'scrollZoom': False})
 
 
-    # --- Growth vs Value ---
+    # --- Sector Rotation ---
 
     col1, col2 = st.columns([1, 3])
 
@@ -572,7 +572,7 @@ with tab2:
 
     # Title, Sentiment, and Description
     with col1:
-        st.subheader("Growth vs Value")
+        st.subheader("Sector Rotation")
         get_gv_sentiment(latest_gv['Score'])
         #st.metric("Score", f"{latest_gv['Score']:.0f}/100")
         st.write("Sector rotation is very common and a core strategy for institutional traders, involving large capital shifts between market areas to capitalize on changing economic cycles and environment. Favoritism in growth stocks often reflects confidence, liquidity, and tolerance for risk. Value stocks tend to outperform during more cautious or late-cycle environments. ")
