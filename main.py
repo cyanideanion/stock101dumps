@@ -259,7 +259,7 @@ with col_chart:
     st.plotly_chart(fig_overall_sentiment, width='stretch', config={'displayModeBar': False, 'scrollZoom': False})
 
 # Setup tabs for different catagories of indicators
-tab1, tab2, tab3, tab4 = st.tabs(["Market Trend", "Asset Allocation", "Research Appendix", "Options Activity"])
+tab1, tab2, tab3, tab4 = st.tabs(["Market Trend", "Flight-To-Safety", "Research Appendix", "Options Activity"])
 
 
 # ==========================================
