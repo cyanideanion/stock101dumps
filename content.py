@@ -43,30 +43,35 @@ RESEARCH_APPENDIX = {
     },
     "forward_performance": {
         "method": """
-            **Method:** This analysis observes the distribution of forward returns of the stock market categorized by the five sentiment regimes: 
-            Extreme Fear, Fear, Neutral, Greed, and Extreme Greed, across the time horizons of 1, 3, 6, and 12 months through a comparative box plot with outliers in scatter points.
+        **Method:** This analysis observes the distribution of forward returns of the stock market categorized by the five sentiment regimes: 
+        Extreme Fear, Fear, Neutral, Greed, and Extreme Greed, across the time horizons of 6, 12, 24, and 36 months through a comparative box plot with outliers in scatter points.
         """,
         "results": """
-            **Results:** \n- **Direct Correlation with Time:** Across all sentiment labels, the median forward return (indicated by the solid horizontal line within boxes) 
-            trends upward as the time horizon extends from 1 month to 12 months. Data dispersion across different sentiments also amplifies as the horizon increases. 
-            \n- **Extreme Greed Outperformance:** The "Extreme Greed" sentiment exhibits a significantly higher return across all quartiles than other sentiments in the 12-month horizon, and a relatively low variance in the 1-month horizon. 
-            \n- **Extreme Fear Leptokurtosis:** The "Extreme Fear" sentiment exhibits a highly concentrated 12-month forward performance relative to other sentiments, 
-            with an IQR of only 7.7%. Additionally, "Extreme Fear" has the largest variance than other sentiments in the 1-month horizon, but gradually skews toward leptokurtosis as horizon increases. 
-            \n- **Fearful Sentiment Dispersion:** The "Fear" sentiment exhibits the highest return variance in the 12-month horizon compared to other sentiments, but also the lowest mean and median return compared to other sentiments in the 12-month horizon. 
-            \n- **Neutral/Greed Convergence:** The 12-month forward returns for "Neutral" and "Greed" are statistically similar, both clustering around a 16% median with an IQR of 13.6% and 15.8% respectively. Additionally, “Neutral” has a relatively low variance in the 1-month horizon.
+            **Results:** \n- **Time Consistency:** Forward horizon duration is the primary driver of total returns across all regimes. The 36-month horizon (dark navy) 
+            consistently achieves the highest median return (~45%–50%) regardless of initial market sentiment.
+            \n- **Stability at Extreme Greed:** Forward return distributions in the “Extreme Greed” regime exhibit low overall variance, 
+            a relatively tightly constrained Interquartile Range (IQR), and absence of extreme outliers across all time horizons. 
+            \n- **Extreme Fear Leptokurtosis:** Unlike all other sentiment regimes, whose IQRs and central variances expand significantly as time horizons lengthen, 
+            ”Extreme Fear” maintains a relatively tighter IQR and variance growth within its middle 50% of outcomes. Converse to “Extreme Greed”, however, 
+            “Extreme Fear” simultaneously produces dense clusters of severe downside outliers at short horizons (6–12 months) and massive upside outlier clusters at longer horizons (24–36 months), 
+            suggesting persistent fat tails across every observed time frame.
         """,
         "discussion": """
-            **Discussion:** Similar to the Recovery Time Analysis, this study examines outcomes in relation of time that are closely dependent on the nature of different asset classes. 
-            From this standpoint, the sentiment spectrum measures the relative degree of risk aversion in the financial market. 
-            And two hypotheses regarding market efficiency and behavioral economics can be extracted through this analysis of forward performance: 
-            \n- **Extreme Fear and Risk Premium:** All four indicators (SPY MA, VIX MA, Yield Spreads, Sector Rotation) trigger “Extreme Fear” often signifies a liquidity-driven dislocation, 
-            where stocks are perceived as extremely risky and equity risk premium at its highest. Contrarian investments during these periods would follow a classic high-risk, 
-            high-reward profile: while 12-month return is relatively robust with minimal variance, short-term (1 to 3 months) volatility are significantly elevated. 
-            \n- **Equilibrium at Extreme Greed:** A common heuristic bias is to assume that "Extreme Greed" is a precursor to an immediate crash. 
-            However, the data suggests that "Extreme Greed" actually produces the highest median 12-month returns with narrower dispersion than the “Fear” sentiment. 
-            This is due to, when the four indicators align in a steady "Greed" state, uptrend technical trading patterns with high confidence in the macroeconomic conditions consolidate 
-            structural stability rather than raising the fear of a crash. Therefore, the systemic risk of an “Extreme Greed” market is primarily the eventual shifts toward 
-            the "Neutral" state with uncertainty in either direction, and not a sudden crash in most cases for the past decade.
+            **Discussion:** Analyzing forward return distributions across aggregate sentiment regimes reveals how prevailing market conditions fundamentally alter volatility, 
+            distributional skew, and multi-year compounding mechanics. While longer holding horizons dictate total return magnitude, 
+            the initial sentiment regime governs whether those returns accrue through steady fundamental growth or extreme, policy-dependent tail
+            \n **Extreme Greed: Structural Multiple Exhaustion:**
+            \n- **“Good News is Priced In”:** Long-term (>12 months) forward returns cannot benefit from further multiple expansion or capital reallocation 
+            due to growth style rotation and equity risk premiums relative to Treasuries are already maxed out, thus constrained by fundamental earnings growth.
+            \n- **Stability & Thin Tails:** Suppression of VIX during “Extreme Greed” regimes reflects heavy options-selling and volatility-harvesting activity, 
+            thus creating a noticeably lower downside risk, short-term return stability (tight 6-month IQRs) relative to other regimes. 
+            \n **Extreme Fear: Triple Mean-Reversion & Leptokurtic Mechanics:** 
+            \n- **“Bad News is Priced In”:** Contrary to “Extreme Greed”, equity valuation multiples and equity prices relative to safer assets have collapsed to near- 
+            or below fundamental values, establishing a rigid "margin of safety." For the middle 50% of outcomes, 
+            baseline returns are securely backed by fundamental growth and valuation restoration to long-term fair value.
+            \n- **Persistent Bidirectional Fat Tails:** “Extreme Fear” is a state of severe structural instability where market outcomes diverge into extreme paths rather than safely converging over time. 
+            If the shock represents a cyclical liquidity freeze, government intervention (SPY vs. IEF) and factor mean-reversion (IVW vs. IVE) ignite massive, speedy recoveries. 
+            Conversely, structural insolvency (economic crises), secular bear markets, or liquidity traps from policy failure may result in multi-year performance drag.
         """,
     }
 
